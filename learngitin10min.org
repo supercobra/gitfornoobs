@@ -1,20 +1,37 @@
-* Git
+* Learn Git in 10 Minutes
+
+This document is a one-page Git for beginning users and for users who
+want to quickly lookup a command or workflow. It is not supposed to be
+an exhaustive guide, but a guide that provides the essentials to get
+started the right way.
+** The magic of Git
+
+** Typical workflow
+*** Clone an existing repository
+*** Create a new repository and push it
+*** Typical commit workflow
+*** Long running feature development model
+*** Tag for versionning
+** Essential commands
 ** git init
 ** git clone
 ** git add
 ** git status
 ** git commit
-git add .
-git commit
+$ git add .
+$ git commit
 or 
-git commit -a
+$ git commit -a
 ** git fetch
 $ git fetch
+Get changes from server
 ...
 From ssh://git.metadot.com/srv/git/project
    ace4e1e..9bf4acf  master     -> origin/master
 
+See merge command to merge changes or pull command to fetch and merge in one command
 ** git diff
+Shows differences
 $ git diff origin/master
 diff --git a/README b/README
 index b55010d..b1a1441 100644
@@ -42,10 +59,10 @@ $ git checkout master
 $ git branch iss53
 $ git checkout iss53
 
-** delete branch
+** delete branch
 git branch -D name
 ==
-git checkout -b iss53 master
+git checkout -b bigfeature master
 ** git checkout
 ** remotes
 add Bob's repo and more repos of the same project
