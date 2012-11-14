@@ -1,0 +1,114 @@
+* Git
+** git init
+** git clone
+** git add
+** git status
+** git commit
+git add .
+git commit
+or 
+git commit -a
+** git fetch
+$ git fetch
+...
+From ssh://git.metadot.com/srv/git/project
+   ace4e1e..9bf4acf  master     -> origin/master
+
+** git diff
+$ git diff origin/master
+diff --git a/README b/README
+index b55010d..b1a1441 100644
+--- a/README
++++ b/README
+@@ -5,5 +5,4 @@ Thank you.
+ -- supercobra was here
+ -- supercobra from home was here.
+ -- logan was here.
+--- supercobra was here.
+
+** git merge
+$ git checkout master
+$ git merge iss53
+$ git merge i18n
+$ git merge origin/master
+** git clone
+** git branch
+$ git branch name
+find .git/refs
+
+$ git branch -r
+shows all branches including remotes
+$ git checkout master
+$ git branch iss53
+$ git checkout iss53
+
+** delete branch
+git branch -D name
+==
+git checkout -b iss53 master
+** git checkout
+** remotes
+add Bob's repo and more repos of the same project
+** git push
+Push changes from local repo to remote (called orgin by default):
+$ git push origin master
+Push changes of branch i18n to remote
+$ git push origin i18n
+
+** git fetch
+git fetch to 'update'
+
+** git pull
+wrapper for fetch and try to merge
+don't use, too automatic
+
+** git log
+head by default
+git log --oneline
+git log i18n --oneline
+git log --online --graph
+git log --oneline --all --graph --decorate
+
+git log -p 
+shows patch
+git log --stat
+git log --stat --no-merges
+*** tips
+git config --global
+alias.lol "log --oneline --graph --decorate"
+
+*** log subset
+git log branchA ^branchB
+or 
+git log branchB ..branchA
+show commits reachable by branchA that are not reachable by branchB
+
+git log i18N ^master
+changes in branch i18N not in master
+
+After doing a fetch: show incoming changes (not merged yet).
+git log origin/master ^master
+
+git log master ^origin/master
+show outgoing changes not pushed to the server yet.
+
+** git tag
+*** creating tag
+$ git tag -a v1.4 -m 'my version 1.4'
+$ git tag
+v0.1
+v1.3
+v1.4
+
+*** pushing a tag
+
+You need to explicitly push tags
+$ git push origin v12.1
+
+* Resources
+http://git-scm.com
+http://gitref.org
+http://progit.com
+chacon@gmail.com
+* Video: Introduction to Git with Scott Chacon of GitHub
+http://www.youtube.com/watch?v=ZDR433b0HJY
