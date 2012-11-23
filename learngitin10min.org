@@ -5,6 +5,13 @@ want to quickly lookup a command or workflow. It is not supposed to be
 an exhaustive guide, but a guide that provides the essentials to get
 started the right way.
 ** The Magic of Git
+Decentralized collaboration
+Fast, flexible.
+** Intro, key concepts
+*** Distributed version control system
+*** Workflow
+Pull (fetch + merge) or Checkout / update => (do some work) => stage
+=> commit locally => push to server
 
 ** Typical workflow
 *** Cloning an existing repository
@@ -78,11 +85,41 @@ $ git branch name
 find .git/refs
 
 $ git branch -r
+
+** git config
+$ git config --list
+user.name=supercobra
+user.email=daniel@metadot.com
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+core.ignorecase=true
+core.precomposeunicode=false
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+remote.origin.url=supercobra@git.metadot.com:/srv/git/bam.git
+branch.master.remote=origin
+branch.master.merge=refs/heads/master
+
+- Important files:
+/etc/gitconfig and /.gitconfig, f
+
+
+** git branch
+$ git branch name
+Create a branch and use it immediately
+$ git branch -r i18n
+$ git branch -r
+
+$find .git/refs
+
+
 shows all branches including remotes
 $ git checkout master
 $ git branch iss53
 $ git checkout iss53
 
+** git rebase
 ** delete branch
 git branch -D name
 ==
@@ -147,6 +184,12 @@ You need to explicitly push tags
 $ git push origin v12.1
 
 * Resources
+
+** Getting help
+$ git help <command>
+$ git <command> --help
+$ man git-<command>
+
 http://git-scm.com
 http://gitref.org
 http://progit.com
