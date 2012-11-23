@@ -4,11 +4,35 @@ This document is a one-page Git for beginning users and for users who
 want to quickly lookup a command or workflow. It is not supposed to be
 an exhaustive guide, but a guide that provides the essentials to get
 started the right way.
-** The magic of Git
+** The Magic of Git
 
 ** Typical workflow
-*** Clone an existing repository
-*** Create a new repository and push it
+*** Cloning an existing repository
+*** Creating a new shared repository on a server
+- On the server
+First create a standard repository on the server:
+user@server$ pwd
+/srv/git
+
+user@server$ git init myproject
+cd myproject
+echo 'README' > README.md
+git add .
+git commit -m "initial commit"
+
+- Then create a bare repository
+$ git clone --bare --shared myproject myproject.git
+
+The shared option ensure Git adds group write permissions.
+- On the client
+user@clientmachine$ git clone username@server.com:/srv/git/myproject.git
+
+modify a file
+$ echo hello >> README.md
+$ git add README.md
+$ git commit -m 'added demo string'
+$ git push
+- 
 *** Typical commit workflow
 *** Long running feature development model
 *** Tag for versionning
@@ -59,7 +83,7 @@ $ git checkout master
 $ git branch iss53
 $ git checkout iss53
 
-** delete branch
+** delete branch
 git branch -D name
 ==
 git checkout -b bigfeature master
