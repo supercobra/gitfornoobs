@@ -153,7 +153,7 @@ git log --stat
 git log --stat --no-merges
 *** tips
 git config --global
-alias.lol "log --oneline --graph --decorate"
+alias.dog "log --decorate --oneline --graph"
 
 *** log subset
 git log branchA ^branchB
