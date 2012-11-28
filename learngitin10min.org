@@ -129,6 +129,7 @@ git checkout -b bigfeature master
 add Bob's repo and more repos of the same project
 ** git push
 Push changes from local repo to remote (called orgin by default):
+$ git init <alias> <local_branch>
 $ git push origin master
 Push changes of branch i18n to remote
 $ git push origin i18n
@@ -152,8 +153,28 @@ shows patch
 git log --stat
 git log --stat --no-merges
 *** tips
-git config --global
+*** List config
+$ git config -l
 alias.dog "log --decorate --oneline --graph"
+
+*** Create aliases
+Create a visual log
+$ git config --global alias.dog "log --decorate --oneline --graph"
+
+$ git dog
+ * 6265cc6 (HEAD, origin/master, origin/HEAD, master) Update learngitin10min.org
+ *   a3d292b Merge branch 'master' of https://github.com/supercobra/learngitin10min
+ |\  
+ | * 9d0d836 More improvements...
+ | * 4d2e94b Improved.
+ | * d76784e Recreated from scratch.
+ | * eb4a11c Typos.
+ * | 4f09974 some more things...
+ * | affda74 Improved.
+ * | c21a119 Recreated from scratch.
+ |/  
+ * 6e2dfa1 Update README.md
+ * e6c8788 Initial commit
 
 *** log subset
 git log branchA ^branchB
