@@ -7,3 +7,7 @@ This one-page guide contains the essential workflow and commands users need to k
 
 <h1>test<h1>
 yo.
+
+<script>
+alert("My First JavaScript");
+</script>
