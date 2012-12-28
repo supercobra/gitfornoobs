@@ -2,8 +2,8 @@
 
 This document is a one-page Git for beginning users and for users who
 want to quickly lookup a command or workflow. It is not supposed to be
-an exhaustive guide, but a guide that provides the essentials to get
-started the right way.
+an exhaustive guide, rather a guide that provides essential commands
+and concepts to get started the right way.
 ** The Magic of Git
 Decentralized collaboration
 Fast, flexible.
@@ -203,6 +203,9 @@ v1.4
 
 You need to explicitly push tags
 $ git push origin v12.1
+
+** Ignoring files
+$ cat my-config.conf >> .gitignore
 
 * Resources
 
