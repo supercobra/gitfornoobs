@@ -1,36 +1,36 @@
 [user]
-	name = Your Full Name
-	email = someemail@somedomain.com
+    name = Your Full Name
+    email = someemail@somedomain.com
 
 [alias]
     ch = checkout
     diverges = !sh -c 'git rev-list --boundary $1...$2 | grep ^- | cut -c2-'
-	# Shows files in a particular commit
-	showf = show --pretty="format:" --name-only
-	l = log --graph
+    # Shows files in a particular commit
+    showf = show --pretty="format:" --name-only
+    l = log --graph
 
 # Some more examples on http://git.wikia.com/wiki/Inital_basic_git_config
 [color]
-        status = auto
-        branch = auto
-        ui     = true
+    status = auto
+    branch = auto
+    ui     = true
 [diff]
-		color = auto
+    color = auto
 [pager]
-        color = true
+    color = true
 [status]
-        color = auto
+    color = auto
 [color "branch"]
-        current = green
-        local = yellow
-        remote = dim yellow
+    current = green
+    local = yellow
+    remote = dim yellow
 [color "diff"]
-        meta = yellow bold
-        frag = magenta bold
-        old = red bold
-        new = green bold
-        whitespace = red reverse
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+    whitespace = red reverse
 [color "status"]
-        added = yellow
-        changed = green
-        untracked = magenta bold
+    added = yellow
+    changed = green
+    untracked = magenta bold
