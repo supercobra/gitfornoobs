@@ -8,9 +8,10 @@
 
 ### You're Beginning a New Task
 
-+ git branch yourname_somedescr_optionaldate (e.g., "git branch jason_fixPartyTimeBug")
-+ git checkout yourname_somedescr_optionaldate
-+ Start changing some code!
+    git branch yourname_somedescr_optionaldate (e.g., "git branch jason_fixPartyTimeBug")
+    git checkout yourname_somedescr_optionaldate
+
+Now change some code!
 
 ### You altered file ABC.txt and will commit it later
     git add ABC.txt
@@ -32,7 +33,7 @@ The same note from above about git push applies to git pull.
 
 ### You're done working on your branch and it's time to pull it in to master
 
-+ git checkout master
-+ git pull origin master (to get it up to date)
-+ git pull origin yourname_somedescr_optionaldate
+    git checkout master
+    git pull origin master
+    git pull origin yourname_somedescr_optionaldate
 
