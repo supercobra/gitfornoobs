@@ -51,11 +51,15 @@ modify a file
 ### Tag for versionning
 ## Essential commands
 ## git commit
+
     $ git add .
     $ git commit
+
 or 
-    $ git commit -a
+
+$ git commit -a
 ** git fetch
+    
     $ git fetch
     Get changes from server
     ...
@@ -65,6 +69,7 @@ or
 See merge command to merge changes or pull command to fetch and merge in one command
 ## git diff
 Shows differences
+
     $ git diff origin/master
     diff --git a/README b/README
     index b55010d..b1a1441 100644
@@ -77,12 +82,14 @@ Shows differences
     --- supercobra was here.
 
 ## git merge
+
     $ git checkout master
     $ git merge abranch
     $ git merge i18n
     $ git merge origin/master
 
 ## git config
+
     $ git config --list
     user.name=supercobra
     user.email=daniel@metadot.com
@@ -102,24 +109,31 @@ Shows differences
 
 
 ## git branch
+
     $ git branch name
+
 Create a branch and use it immediately
+
     $ git branch -r i18n
     $ git branch -r
+
 Useful
+
     $find .git/refs
 
-
 ### shows all branches including remotes
+
     $ git checkout master
     $ git branch abranch
     $ git checkout abranch
 
 ## git rebase
 ## delete branch
+
     git branch -D name
 ==
     git checkout -b bigfeature master
+
 ## git checkout
 ## remotes
 add Bob's repo and more repos of the same project
@@ -127,15 +141,16 @@ add Bob's repo and more repos of the same project
 Push changes from local repo to remote (called orgin by default):
     $ git init <alias> <local_branch>
     $ git push origin master
+
 Push changes of branch i18n to remote
+
     $ git push origin i18n
 
 ## git fetch
-git fetch to 'update'
+use git fetch to 'update'
 
 ## git pull
-wrapper for fetch and try to merge
-don't use, too automatic
+Wrapper for fetch and merge.
 
 ## git log
 head by default
@@ -145,15 +160,20 @@ head by default
     git log --oneline --all --graph --decorate
 
     git log -p 
+    
 shows patch
+
     git log --stat
     git log --stat --no-merges
+
 ### tips
-### List config
+#### List config
+ 
     $ git config -l
     alias.dog "log --decorate --oneline --graph"
 
-### Create aliases
+#### Log
+
 Create a visual log
 
     $ git config --global alias.dog "log --decorate --oneline --graph"
@@ -178,19 +198,24 @@ Create a visual log
     git log branchA ^branchB
 or 
      git log branchB ..branchA
+     
 show commits reachable by branchA that are not reachable by branchB
 
     git log i18N ^master
+    
 changes in branch i18N not in master
 
 After doing a fetch: show incoming changes (not merged yet).
+
     git log origin/master ^master
 
     git log master ^origin/master
+
 show outgoing changes not pushed to the server yet.
 
 ## git tag
 ### creating tag
+
     $ git tag -a v1.4 -m 'my version 1.4'
     $ git tag
     v0.1
@@ -200,9 +225,11 @@ show outgoing changes not pushed to the server yet.
 ### pushing a tag
 
 You need to explicitly push tags
+
     $ git push origin v12.1
 
 ## Ignoring files
+
     $ cat my-config.conf >> .gitignore
 
 # Resources
