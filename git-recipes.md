@@ -22,6 +22,7 @@ Pull (fetch + merge) or Checkout / update => (do some work) => stage
 ### Creating a new shared repository on a server
 - On the server
 First create a standard repository on the server:
+    
     user@server$ pwd
     /srv/git
 
