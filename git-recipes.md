@@ -27,10 +27,10 @@ First create a standard repository on the server:
     /srv/git
 
     user@server$ git init myproject
-    cd myproject
-    echo 'README' > README.md
-    git add .
-    git commit -m "initial commit"
+    user@server$ cd myproject
+    user@server$ echo 'README' > README.md
+    user@server$ git add .
+    user@server$ git commit -m "initial commit"
 
 - Then create a bare repository
 
