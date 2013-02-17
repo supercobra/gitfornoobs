@@ -23,6 +23,7 @@ Pull (fetch + merge) or Checkout / update => (do some work) => stage
 - On the server
 First create a standard repository on the server:
 
+
     $ pwd
     /srv/git
     $ git init myproject
@@ -33,20 +34,35 @@ First create a standard repository on the server:
 
 - Then create a bare repository
 
+
+    $ cd ..
     $ git clone --bare --shared myproject myproject.git
+    
+- Delete initial unneeded project
+
+
+    $ rm -rf myproject
 
 The shared option ensure Git adds group write permissions.
 - On the client
 
+
     user@clientmachine$ git clone username@server.com:/srv/git/myproject.git
 
-modify a file
+- modify a file and push to server
+
 
     $ echo hello >> README.md
     $ git add README.md
     $ git commit -m 'added demo string'
     $ git push
-- 
+    
+- Get changes from server
+
+
+    $ git pull
+    
+
 ## Typical commit workflow
 ### Long running feature development model
 ### Tag for versionning
