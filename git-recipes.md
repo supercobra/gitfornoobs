@@ -22,15 +22,14 @@ Pull (fetch + merge) or Checkout / update => (do some work) => stage
 ### Creating a new shared repository on a server
 - On the server
 First create a standard repository on the server:
-    
-    user@server$ pwd
-    /srv/git
 
-    user@server$ git init myproject
-    user@server$ cd myproject
-    user@server$ echo 'README' > README.md
-    user@server$ git add .
-    user@server$ git commit -m "initial commit"
+    $ pwd
+    /srv/git
+    $ git init myproject
+    user$ cd myproject
+    $ echo 'README' > README.md
+    $ git add .
+    $ git commit -m "initial commit"
 
 - Then create a bare repository
 
@@ -42,6 +41,7 @@ The shared option ensure Git adds group write permissions.
     user@clientmachine$ git clone username@server.com:/srv/git/myproject.git
 
 modify a file
+
     $ echo hello >> README.md
     $ git add README.md
     $ git commit -m 'added demo string'
