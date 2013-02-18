@@ -68,12 +68,9 @@ First create a standard repository on the server:
 
 		$ pwd
 		/srv/git
-		$ git init myproject
-		user$ cd myproject
-		$ echo 'README' > README.md
-		$ git add .
-		$ git commit -m "initial commit"
-
+		$ mkdir myproject && cd myproject
+		$ git init --bare
+	xxxxxxxxxxxxxxxxxxxxx
 - Then create a bare repository
 
 		$ cd ..
