@@ -14,53 +14,92 @@ Every git repository can be used for check-ins.  Among other things, this means 
 
 ### Distributed version control system
 ### Workflow
-Pull (fetch + merge) or Checkout / update => (do some work) => stage
-=> commit locally => push to server
+
+1. Initially clone the project
+
+		git clone somegitaddress
+2. Update your local source with the latest code on the server ("the server" is also known as "origin")
+
+		git pull
+3. Make changes
+
+		vim for_life.txt
+4. Commit your changes to your local repository
+
+		git commit file1 file2 file3 -m "Some message"
+5. Test, test some more, test some more more.
+6. Push your changes up to the server
+
+		git push
+7. Repeat!  Go to step 2.
+
+In some cases your local config may have multiple "remotes", so you'll need to specify the remote you want to use when pushing and pulling.  Often, these are what you want:
+
+		git pull origin master
+		git push origin master
+
+		git pull origin jasons_amazing_branch
+		git push origin daves_equally_amazing_branch
+
+Not sure where 'origin' points?
+
+		git remote show origin
+
 
 ## Typical workflow
 ### Cloning an existing repository
+
+1. Make sure your ~/.gitconfig has values you want.  It's a plain text file.  Here is the one [Jason uses](https://github.com/Dunnzilla/dzbin/blob/master/conf/_gitconfig).
+2. Go to github and on the Code tab for a repository you'll see the Git project URL.  It will be something like:
+
+		git@github.com:supercobra/learngitin10min.git
+
+3. To clone this (also known as "checking out" in other source control projects) on your local machine, it's very easy:
+
+		git clone git@github.com:supercobra/learngitin10min.git
+
+4. Congratulations! You now have a local copy of learngitin10min to which you can commit changes and later push them up to the main repository.
+
+
 ### Creating a new shared repository on a server
 - On the server
 First create a standard repository on the server:
 
 
-    $ pwd
-    /srv/git
-    $ git init myproject
-    user$ cd myproject
-    $ echo 'README' > README.md
-    $ git add .
-    $ git commit -m "initial commit"
+		$ pwd
+		/srv/git
+		$ git init myproject
+		user$ cd myproject
+		$ echo 'README' > README.md
+		$ git add .
+		$ git commit -m "initial commit"
 
 - Then create a bare repository
 
-
-    $ cd ..
-    $ git clone --bare --shared myproject myproject.git
+		$ cd ..
+		$ git clone --bare --shared myproject myproject.git
     
 - Delete initial unneeded project
 
 
-    $ rm -rf myproject
+		$ rm -rf myproject
 
 The shared option ensure Git adds group write permissions.
+
 - On the client
 
-
-    user@clientmachine$ git clone username@server.com:/srv/git/myproject.git
+		user@clientmachine$ git clone username@server.com:/srv/git/myproject.git
 
 - modify a file and push to server
 
-
-    $ echo hello >> README.md
-    $ git add README.md
-    $ git commit -m 'added demo string'
-    $ git push
+		$ echo hello >> README.md
+		$ git add README.md
+		$ git commit -m 'added demo string'
+		$ git push
     
 - Get changes from server
 
-
-    $ git pull
+		$ git pull
     
 
 ## Typical commit workflow
