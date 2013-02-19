@@ -44,6 +44,7 @@ To be done only once:
 		
 7. Repeat! Go to step 2.
 
+### Working with several remotes
 In some cases your local config may have multiple "remotes", so you'll need to specify the remote you want to use when pushing and pulling.  Often, these are what you want:
 
 		git pull origin master
