@@ -58,24 +58,10 @@ Not sure where 'origin' points?
 		git remote show origin
 
 
-### Cloning an existing repository
-
-1. Make sure your ~/.gitconfig has values you want.  It's a plain text file.  Here is the one [Jason uses](https://github.com/Dunnzilla/dzbin/blob/master/conf/_gitconfig).
-2. Go to github and on the Code tab for a repository you'll see the Git project URL.  It will be something like:
-
-		git@github.com:supercobra/learngitin10min.git
-
-3. To clone this (also known as "checking out" in other source control projects) on your local machine, it's very easy:
-
-		git clone git@github.com:supercobra/learngitin10min.git
-
-4. Congratulations! You now have a local copy of learngitin10min to which you can commit changes and later push them up to the main repository.
-
-
 ### Creating a shared repository
 Here is how to create a shared Git repo where people can pull and push from.
 
-- On the server
+- On the erver
 First create a standard repository on the server:
 
 		ssh user@example.com
@@ -263,7 +249,8 @@ You need to explicitly push tags
 - http://progit.com
 
 ## Video: Introduction to Git with Scott Chacon of GitHub
-	http://www.youtube.com/watch?v=ZDR433b0HJY
+
+- http://www.youtube.com/watch?v=ZDR433b0HJY
 
 
 ## Suggested Branching Strategy
