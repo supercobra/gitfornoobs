@@ -10,7 +10,7 @@ Decentralized collaboration. Fast, really fast. Flexible.
 ## Intro, key concepts
 ### Key Concepts
 
-You commit *locally* and *push* changes to the server. You *merge* server updated back to your local repository.
+You commit *locally* and *push* changes to the server. You *merge* server updates back to your local repository.
 Advanced: You can merge and push to many different remotes. This means you can check out a 
 branch sitting on another developer's machine which does not exist the server.
 
