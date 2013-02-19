@@ -82,10 +82,9 @@ Assuming the myproject directory has the content ready:
 		git push -u origin master
 
     
-# TBD ====================
-### How to work with a long running feature development model
-### Tag for versionning
-*## git diff
+## TBD How to work with a long running feature development model
+## TBD Tag for versionning
+## git diff
 Shows differences
 
     $ git diff origin/master
@@ -103,7 +102,7 @@ Shows differences
 
     $ git checkout master
     $ git merge abranch
-    $ git merge i18n
+    $ git merge mynewfeature
     $ git merge origin/master
 
 ## git config
@@ -122,11 +121,12 @@ Shows differences
     branch.master.remote=origin
     branch.master.merge=refs/heads/master
     
-- Important files:
-/etc/gitconfig and /.gitconfig
+### Important files:
+- /etc/gitconfig and 
+- ~/.gitconfig
+-   In your local repo, look at .git/refs/<all files>
 
-
-## git branch
+### git branch
 
     $ git branch name
 
@@ -134,10 +134,6 @@ Create a branch and use it immediately
 
     $ git branch -r myexperiment
     $ git branch -r
-
-Useful
-
-    In your local repo, look at .git/refs/<all files>
 
 ### shows all branches including remotes
 
