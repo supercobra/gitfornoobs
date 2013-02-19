@@ -18,19 +18,22 @@ Every git repository can be used for check-ins.  Among other things, this means 
 
 		git clone somegitaddress
 		
-2. Update your local source with the latest code on the server ("the server" is also known as "origin")
-
-		git pull
-		
-3. Make changes
+2. Make changes
 
 		vim for_life.txt
 		
-4. Commit your changes to your local repository
+3. Commit your changes to your local repository
 
 		git commit file1 file2 file3 -m "Some message"
 		
 5. Test, test some more, test some more more.
+
+6. Get the lastest code on the server and merge it with you code ("the server" is also known as "origin")
+
+		git pull
+		
+5. Test, test some more, test some more more, fix and commit changes.
+		
 6. Push your changes up to the server
 
 		git push
