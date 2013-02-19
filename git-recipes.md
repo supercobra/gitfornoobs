@@ -1,7 +1,6 @@
 # Learn Git in 10 Minutes
 
-This document is a one-page Git for beginning users and for users who
-want to quickly lookup a command or workflow. It is not supposed to be
+This document is a one-page Git for noobs. It is not supposed to be
 an exhaustive guide, rather a guide that provides essential commands
 and concepts to get started the right way.
 
@@ -18,20 +17,25 @@ Every git repository can be used for check-ins.  Among other things, this means 
 1. Initially clone the project
 
 		git clone somegitaddress
+		
 2. Update your local source with the latest code on the server ("the server" is also known as "origin")
 
 		git pull
+		
 3. Make changes
 
 		vim for_life.txt
+		
 4. Commit your changes to your local repository
 
 		git commit file1 file2 file3 -m "Some message"
+		
 5. Test, test some more, test some more more.
 6. Push your changes up to the server
 
 		git push
-7. Repeat!  Go to step 2.
+		
+7. Repeat! Go to step 2.
 
 In some cases your local config may have multiple "remotes", so you'll need to specify the remote you want to use when pushing and pulling.  Often, these are what you want:
 
@@ -61,44 +65,30 @@ Not sure where 'origin' points?
 4. Congratulations! You now have a local copy of learngitin10min to which you can commit changes and later push them up to the main repository.
 
 
-### Creating a new shared repository on a server
+### Creating a shared repository
 - On the server
 First create a standard repository on the server:
 
-
-		$ pwd
-		/srv/git
-		$ mkdir myproject && cd myproject
-		$ git init --bare
-	xxxxxxxxxxxxxxxxxxxxx
-- Then create a bare repository
-
-		$ cd ..
-		$ git clone --bare --shared myproject myproject.git
-    
-- Delete initial unneeded project
-
-
-		$ rm -rf myproject
-
+		ssh user@example.com
+		mkdir myproject.git
+		cd myproject.git
+		git init --bare
+		
 The shared option ensure Git adds group write permissions.
 
-- On the client
+- On your local workstation
+Assuming the myproject directory has the content ready:
 
-		user@clientmachine$ git clone username@server.com:/srv/git/myproject.git
+		cd myproject
+		git init
+		git add *
+		git commit -m "Initial import"
+		git remote add origin user@example.com:/path/to/myproject.git
+		git push -u origin master
 
-- modify a file and push to server
 
-		$ echo hello >> README.md
-		$ git add README.md
-		$ git commit -m 'added demo string'
-		$ git push
     
-- Get changes from server
-
-		$ git pull
-    
-
+# TBD ====================
 ## Typical commit workflow
 ### Long running feature development model
 ### Tag for versionning
@@ -225,10 +215,7 @@ shows patch
     $ git config -l
     alias.dog "log --decorate --oneline --graph"
 
-#### Log
-
-Create a visual log
-
+#### Log: a visual log using a cool alias
     $ git config --global alias.dog "log --decorate --oneline --graph"
 
     $ git dog
