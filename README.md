@@ -14,7 +14,7 @@ You **add** then **commit** your files locally then **push** changes to the serv
 
 
 Advanced: You can merge and push to many different remotes. This means you can check out a 
-branch sitting on another developer's machine which does not exist the server.
+branch sitting on another developer's machine which does not exist the server. If you want to contribute to a project where you don't have write access, clone it, modify it then send a **pull request** to the project owner.
 
 ### Working With a Centralized Git Repository
 This is a typical way an organization will work: one central shared Git project. Developers get and push changes from and to the server.
