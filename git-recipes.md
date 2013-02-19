@@ -5,18 +5,22 @@ an exhaustive guide, rather a guide that provides essential commands
 and concepts to get started the right way.
 
 ## The Magic of Git
-Decentralized collaboration
-Fast, flexible.
+Decentralized collaboration. Fast, really fast. Flexible.
+
 ## Intro, key concepts
 ### Key Concepts
-Every git repository can be used for check-ins.  Among other things, this means you can check out a branch sitting on another developer's machine which does not exist on github.
 
-### Distributed version control system
-### Workflow
+You commit *locally* and *push* changes to the server. You *merge* server updated back to your local repository.
+Advanced: You can merge and push to many different remotes. This means you can check out a 
+branch sitting on another developer's machine which does not exist the server.
 
-1. Initially clone the project
+### Working With a Centralized Git Repository
+This is a typical way an organization will work: one central shared Git project. Developers get and push changes from and to the server.
 
-		git clone somegitaddress
+1. On your workstation: clone the project
+To be done only once:
+
+		git clone git@github.com:supercobra/learngitin10min.git
 		
 2. Make changes
 
@@ -53,7 +57,6 @@ Not sure where 'origin' points?
 		git remote show origin
 
 
-## Typical workflow
 ### Cloning an existing repository
 
 1. Make sure your ~/.gitconfig has values you want.  It's a plain text file.  Here is the one [Jason uses](https://github.com/Dunnzilla/dzbin/blob/master/conf/_gitconfig).
@@ -69,6 +72,8 @@ Not sure where 'origin' points?
 
 
 ### Creating a shared repository
+Here is how to create a shared Git repo where people can pull and push from.
+
 - On the server
 First create a standard repository on the server:
 
@@ -77,8 +82,6 @@ First create a standard repository on the server:
 		cd myproject.git
 		git init --bare
 		
-The shared option ensure Git adds group write permissions.
-
 - On your local workstation
 Assuming the myproject directory has the content ready:
 
@@ -89,31 +92,11 @@ Assuming the myproject directory has the content ready:
 		git remote add origin user@example.com:/path/to/myproject.git
 		git push -u origin master
 
-
     
 # TBD ====================
-## Typical commit workflow
-### Long running feature development model
+### How to work with a long running feature development model
 ### Tag for versionning
-## Essential commands
-## git commit
-
-    $ git add .
-    $ git commit
-
-or 
-
-$ git commit -a
-** git fetch
-    
-    $ git fetch
-    Get changes from server
-    ...
-    From ssh://git.metadot.com/srv/git/project
-    ace4e1e..9bf4acf  master     -> origin/master
-
-See merge command to merge changes or pull command to fetch and merge in one command
-## git diff
+*## git diff
 Shows differences
 
     $ git diff origin/master
@@ -151,7 +134,7 @@ Shows differences
     branch.master.merge=refs/heads/master
     
 - Important files:
-/etc/gitconfig and /.gitconfig, f
+/etc/gitconfig and /.gitconfig
 
 
 ## git branch
@@ -160,43 +143,34 @@ Shows differences
 
 Create a branch and use it immediately
 
-    $ git branch -r i18n
+    $ git branch -r myexperiment
     $ git branch -r
 
 Useful
 
-    $find .git/refs
+    In your local repo, look at .git/refs/<all files>
 
 ### shows all branches including remotes
 
-    $ git checkout master
-    $ git branch abranch
-    $ git checkout abranch
+   tbd
 
 ## git rebase
 ## delete branch
 
     git branch -D name
-==
-    git checkout -b bigfeature master
 
-## git checkout
 ## remotes
-add Bob's repo and more repos of the same project
+Add Bob's repo and more repos of the same project
+
 ## git push
+
 Push changes from local repo to remote (called orgin by default):
-    $ git init <alias> <local_branch>
-    $ git push origin master
 
-Push changes of branch i18n to remote
+$ git push origin master
 
-    $ git push origin i18n
+Push changes of branch myexperiment to remote
 
-## git fetch
-use git fetch to 'update'
-
-## git pull
-Wrapper for fetch and merge.
+    $ git push origin myexperiment
 
 ## git log
 head by default
@@ -207,7 +181,7 @@ head by default
 
     git log -p 
     
-shows patch
+## shows patch
 
     git log --stat
     git log --stat --no-merges
@@ -275,23 +249,20 @@ You need to explicitly push tags
 
     $ cat my-config.conf >> .gitignore
 
-# Resources
-
 ## Getting help
 
     $ git help <command>
     $ git <command> --help
     $ man git-<command>
 
-### Links
+### Lean More Links
 
-* http://git-scm.com
-http://gitref.org
-http://progit.com
-chacon@gmail.com
+- http://git-scm.com
+- http://gitref.org
+- http://progit.com
 
-### Video: Introduction to Git with Scott Chacon of GitHub
-http://www.youtube.com/watch?v=ZDR433b0HJY
+## Video: Introduction to Git with Scott Chacon of GitHub
+	http://www.youtube.com/watch?v=ZDR433b0HJY
 
 
 ## Suggested Branching Strategy
