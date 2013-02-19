@@ -1,8 +1,8 @@
-# Learn Git in 10 Minutes
+# Git For Noobs
 
 This document is a one-page Git for noobs. It is not supposed to be
 an exhaustive guide, rather a guide that provides essential commands
-and concepts to get started the right way.
+and concepts to get started the in no time.
 
 ## The Magic of Git
 Decentralized collaboration. Fast, really fast. Flexible.
