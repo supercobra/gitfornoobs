@@ -22,7 +22,7 @@ This is a typical way an organization will work: one central shared Git project.
 1. On your workstation: clone the project
 To be done only once:
 
-  	git clone git@github.com:supercobra/learngitin10min.git
+  	git clone git@github.com:supercobra/gitfornoobs.git
 		
 2. Make changes
 
